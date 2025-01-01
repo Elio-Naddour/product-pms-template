@@ -1,0 +1,50 @@
+// Custom variables
+$primary: #0d6efd;
+$secondary: #4e555d; //#b2b4b6;
+$white: #ffffff;
+$navbar-bg: $primary;
+
+.custom-navbar {
+  background-color: $navbar-bg !important;
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    .links-container {
+      font-size: 1.2rem;
+
+      display: flex;
+      gap: 0.5rem;
+      .nav-link {
+        color: $white !important;
+        text-decoration: none;
+
+        &:hover {
+          transform: scale(0.9);
+          transition-duration: 0.5s;
+        }
+      }
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $white !important;
+      text-decoration: none;
+
+      &:hover {
+        transform: scale(0.9);
+        transition-duration: 0.5s;
+      }
+    }
+  }
+}
+
+.img-home{
+  display: block;
+  width: 20rem;
+  margin: 1rem auto 1rem auto;
+}
