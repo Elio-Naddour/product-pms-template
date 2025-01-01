@@ -27,7 +27,7 @@ const ProductsList: React.FC<ListProps> = ({
       <Button onClick={onAddClick}>+ ADD </Button>
 
       {products?.map((item, index) => (
-        <Suspense fallback={<Spinner animation='border' variant='primary' />}>
+        <Suspense key={`${index}${item.id}`} fallback={<Spinner animation='border' variant='primary' />}>
           <ProductCard
             cardKey={`${index}${item.id}`}
             id={item.id}

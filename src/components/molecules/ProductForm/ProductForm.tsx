@@ -91,7 +91,7 @@ const ProductForm: React.FC<FormProps> = ({
             <option value=''>Select category</option>
 
             {categories.map((category) => (
-              <option value={`${category}`}>{category}</option>
+              <option key={category} value={`${category}`}>{category}</option>
             ))}
           </select>
           {errors.category && (
