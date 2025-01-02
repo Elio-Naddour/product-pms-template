@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useCallback, useEffect, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   clearCrudError,
@@ -31,8 +31,12 @@ const Products = () => {
   );
 
   const dispatch = useDispatch();
+  const initialized = useRef(false);
 
   useEffect(() => {
+    if (initialized.current) return; // Prevent re-execution
+    initialized.current = true;
+
     dispatch(fetchProducts());
     dispatch(fetchCategories());
   }, [dispatch]);
@@ -85,7 +89,7 @@ const Products = () => {
       ) : (
         <>
           {error ? (
-            <ErrorMessage message={error.message} />
+            <ErrorMessage message={error.message || error.data} />
           ) : (
             <Suspense fallback={<div>listing...</div>}>
               <ProductsList

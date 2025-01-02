@@ -1,18 +1,18 @@
 import {
-  FETCH_PRODUCTS_FAILURE,
+  FETCH_PRODUCTS_FAIL,
   FETCH_PRODUCTS,
   FETCH_PRODUCTS_SUCCESS,
   FETCH_SINGLE_PRODUCT,
-  FETCH_SINGLE_PRODUCT_FAILURE,
+  FETCH_SINGLE_PRODUCT_FAIL,
   FETCH_SINGLE_PRODUCT_SUCCESS,
   DELETE_SINGLE_PRODUCT,
   DELETE_SINGLE_PRODUCT_SUCCESS,
-  DELETE_SINGLE_PRODUCT_FAILURE,
+  DELETE_SINGLE_PRODUCT_FAIL,
   ADD_SINGLE_PRODUCT,
-  ADD_SINGLE_PRODUCT_FAILURE,
+  ADD_SINGLE_PRODUCT_FAIL,
   ADD_SINGLE_PRODUCT_SUCCESS,
   UPDATE_SINGLE_PRODUCT,
-  UPDATE_SINGLE_PRODUCT_FAILURE,
+  UPDATE_SINGLE_PRODUCT_FAIL,
   UPDATE_SINGLE_PRODUCT_SUCCESS,
   CLEAR_PRODUCTS,
   CLEAR_CRUD_ERROR,
@@ -55,8 +55,8 @@ export type FetchProductsSuccessAction = {
   payload: { data: Products[] };
 };
 export type FetchProductsFailureAction = {
-  type: typeof FETCH_PRODUCTS_FAILURE;
-  payload: { data: errorResponse };
+  type: typeof FETCH_PRODUCTS_FAIL;
+  error: errorResponse;
 };
 
 export type FetchSingleProductAction = {
@@ -70,8 +70,8 @@ export type FetchSingleProductSuccessAction = {
   payload: { data: Products };
 };
 export type FetchSingleProductFailureAction = {
-  type: typeof FETCH_SINGLE_PRODUCT_FAILURE;
-  payload: { data: errorResponse };
+  type: typeof FETCH_SINGLE_PRODUCT_FAIL;
+  error: errorResponse;
 };
 
 export type DeleteSingleProductAction = {
@@ -85,8 +85,8 @@ export type DeleteSingleProductSuccessAction = {
   payload: string;
 };
 export type DeleteSingleProductFailureAction = {
-  type: typeof DELETE_SINGLE_PRODUCT_FAILURE;
-  payload: { data: errorResponse };
+  type: typeof DELETE_SINGLE_PRODUCT_FAIL;
+  error: errorResponse;
 };
 
 export type AddSingleProductAction = {
@@ -100,8 +100,8 @@ export type AddSingleProductSuccessAction = {
   payload: Object;
 };
 export type AddSingleProductFailureAction = {
-  type: typeof ADD_SINGLE_PRODUCT_FAILURE;
-  payload: { data: errorResponse };
+  type: typeof ADD_SINGLE_PRODUCT_FAIL;
+  error: errorResponse;
 };
 
 export type UpdateSingleProductAction = {
@@ -115,8 +115,8 @@ export type UpdateSingleProductSuccessAction = {
   payload: Object;
 };
 export type UpdateSingleProductFailureAction = {
-  type: typeof UPDATE_SINGLE_PRODUCT_FAILURE;
-  payload: { data: errorResponse };
+  type: typeof UPDATE_SINGLE_PRODUCT_FAIL;
+  error: errorResponse;
 };
 
 export type CleareProductsAction = {

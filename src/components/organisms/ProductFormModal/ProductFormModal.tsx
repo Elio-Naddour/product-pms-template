@@ -134,9 +134,9 @@ const ProductFormModal: React.FC<ProductFormModalProps> = ({
           />
         )}
       </Modal.Body>
-      {error ? <ErrorMessage message={error.message} /> : <></>}
+      {error ? <ErrorMessage message={error.message || error.data} /> : <></>}
       {categoriesError ? (
-        <ErrorMessage message={categoriesError.message} />
+        <ErrorMessage message={categoriesError.message || categoriesError.data} />
       ) : (
         <></>
       )}

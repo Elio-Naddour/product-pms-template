@@ -5,7 +5,7 @@ import {
 } from '../../types/categoriesTypes';
 import {
   FETCH_CATEGORIES,
-  FETCH_CATEGORIES_FAILURE,
+  FETCH_CATEGORIES_FAIL,
   FETCH_CATEGORIES_SUCCESS,
 } from '../constants/categoriesConstants';
 
@@ -25,8 +25,8 @@ const categoriesReducer: Reducer<CategoriesState, CategoriesActionTypes> = (
       return { ...state, loading: true, error: null };
     case FETCH_CATEGORIES_SUCCESS:
       return { ...state, loading: false, categories: action.payload.data };
-    case FETCH_CATEGORIES_FAILURE:
-      return { ...state, loading: false, error: action.payload.data };
+    case FETCH_CATEGORIES_FAIL:
+      return { ...state, loading: false, error: action.error };
 
     default:
       return state;

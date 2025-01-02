@@ -9,4 +9,5 @@ export interface request<T> extends BaseRequest {
 export interface errorResponse {
   status: string;
   message: string;
+  data: string;
 }

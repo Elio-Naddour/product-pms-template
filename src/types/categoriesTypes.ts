@@ -1,4 +1,4 @@
-import { FETCH_CATEGORIES, FETCH_CATEGORIES_FAILURE, FETCH_CATEGORIES_SUCCESS } from "src/store/constants/categoriesConstants";
+import { FETCH_CATEGORIES, FETCH_CATEGORIES_FAIL, FETCH_CATEGORIES_SUCCESS } from "src/store/constants/categoriesConstants";
 import { errorResponse } from "./apiTypes";
 
 
@@ -20,8 +20,8 @@ export type FetchCategoriesSuccessAction = {
   payload: { data: string[] };
 };
 export type FetchCategoriesFailureAction = {
-  type: typeof FETCH_CATEGORIES_FAILURE;
-  payload: { data: errorResponse };
+  type: typeof FETCH_CATEGORIES_FAIL;
+  error: errorResponse;
 };
 
 export type CategoriesActionTypes =

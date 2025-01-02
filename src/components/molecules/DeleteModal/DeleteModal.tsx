@@ -26,7 +26,7 @@ const DeleteModal: React.FC<DeleteProps> = ({
       <Modal.Body>
         Are you sure you want to delete this item? This action cannot be undone.
       </Modal.Body>
-      {error ? <ErrorMessage message={error.message} /> : <></>}
+      {error ? <ErrorMessage message={error.message || error.data} /> : <></>}
       <Modal.Footer>
         <Button variant='secondary' disabled={loading} onClick={onHide}>
           Cancel

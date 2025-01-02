@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -14,18 +14,26 @@ const ProductDetails = () => {
     (state: RootState) => state.products
   );
 
+  const initialized = useRef(false);
+
   useEffect(() => {
+    if (initialized.current) return; // Prevent re-execution
+    initialized.current = true;
+
     if (id) dispatch(fetchSingleProduct(id));
   }, [dispatch, id]);
 
   return (
     <>
       {loading ? (
-        <div> <Spinner animation='border' variant='primary' /></div>
+        <div>
+          {' '}
+          <Spinner animation='border' variant='primary' />
+        </div>
       ) : (
         <>
           {error ? (
-            <ErrorMessage message={error.message} />
+            <ErrorMessage message={error.message || error.data} />
           ) : (
             <Container fluid className='py-5'>
               <Row className='align-items-center'>
