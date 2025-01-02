@@ -24,7 +24,7 @@ const ProductsList: React.FC<ListProps> = ({
 }) => {
   return (
     <div className='grid-container'>
-      <Button onClick={onAddClick}>+ ADD </Button>
+      <Button onClick={onAddClick} className='add-button'>+ ADD </Button>
 
       {products?.map((item, index) => (
         <Suspense key={`${index}${item.id}`} fallback={<Spinner animation='border' variant='primary' />}>

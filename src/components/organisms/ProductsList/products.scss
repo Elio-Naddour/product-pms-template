@@ -10,4 +10,8 @@
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
   }
+  .add-button{
+    border-radius: 20px;
+    font-size: 1.5rem;
+  }
 }
