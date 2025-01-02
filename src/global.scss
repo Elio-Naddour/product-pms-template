@@ -27,6 +27,9 @@ $navbar-bg: $primary;
           transition-duration: 0.5s;
         }
       }
+      .active-link {
+        text-decoration: underline !important;
+      }
     }
 
     .navbar-brand {
@@ -43,7 +46,7 @@ $navbar-bg: $primary;
   }
 }
 
-.img-home{
+.img-home {
   display: block;
   width: 20rem;
   margin: 1rem auto 1rem auto;
