@@ -1,13 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { Button } from 'react-bootstrap';
-// import ProductCard from 'src/components/molecules/ProductCard/ProductCard';
 import './products.scss';
 import { Products } from 'src/types/productsTypes';
 import Spinner from 'react-bootstrap/Spinner';
-
-const ProductCard = lazy(
-  () => import('src/components/molecules/ProductCard/ProductCard')
-);
+import ProductCard from 'src/components/molecules/ProductCard/ProductCard';
+// const ProductCard = lazy(
+//   () => import('src/components/molecules/ProductCard/ProductCard')
+// );
 
 interface ListProps {
   products: Products[];
@@ -27,7 +26,7 @@ const ProductsList: React.FC<ListProps> = ({
       <Button onClick={onAddClick} className='add-button'>+ ADD </Button>
 
       {products?.map((item, index) => (
-        <Suspense key={`${index}${item.id}`} fallback={<Spinner animation='border' variant='primary' />}>
+        // <Suspense key={`${index}${item.id}`} fallback={<Spinner animation='border' variant='primary' />}>
           <ProductCard
             cardKey={`${index}${item.id}`}
             id={item.id}
@@ -43,7 +42,7 @@ const ProductsList: React.FC<ListProps> = ({
               onEditClick(item.id.toString());
             }}
           />
-        </Suspense>
+        // </Suspense>
       ))}
     </div>
   );
